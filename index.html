@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Single applet + API</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.geogebra.org/apps/deployggb.js"
+    ></script>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+      integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+      crossorigin="anonymous"
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+      integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+      integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <script
+      defer="defer"
+      src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+      crossorigin="anonymous"
+      onload='renderMathInElement(document.body,
+        {delimiters:[ {left: "$$", right: "$$" , display: true}, 
+                      {left: "$" , right: "$" , display: false}, 
+                      {left: "\\(" , right: "\\)" , display: false}, 
+                      {left: "\\[" , right: "\\]" , display: true} 
+                      ]
+        });'
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/latex.css/style.min.css" />
+<html>
+<head> 
+<style>
+h1 {text-align: left;
+  margin: 5mm -5mm -5mm 5mm;}
+  h4 {text-align: center ;
+  margin: 5mm -5mm -5mm 5mm;}
+p {text-align:left;
+  margin: 10mm 1mm 10mm 25mm;
+}
+  .column {
+  float: left;
+  width: 50%;
+}
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  ul {
+  margin: 5mm 10mm 10mm 30mm;
+  padding: 0;
+}
+</style>
+</head>
+<body>
+  <body lang="pt">
+    <h1>Teste<br></h1>
+    <h4> Preenche no seguinte link </h4><h6>https://docs.google.com/forms/d/e/1FAIpQLSe7iorTtM_j50XclfllGq4ccHDPam153NxTx3gmezipPqHUaQ/viewform </h6> <h4> as respostas respetivas às perguntas do teste </h4>
+    <p> 1.  Considere, num referencial o.n. \(Oxyz\), um paralelepípedo retângulo [\(ABCDEFGH\)] de bases [\(ABCD\)] e [\(FGHE\)], sendo [\(AF\)], [\(BG\)], [\(CH\)] e [\(DE\)] as arestas laterais deste paralelepípedo.     
+<br>Na base [\(ABCD\)], o vértice \(A\) pertence ao semieixo positivo \(Ox\), o vértice \(B\) pertence ao semieixo positivo  \(Oy\), os vértices \(C\) e \(D\) têm cota positiva, e o segmento de reta [\(BD\)] é uma diagonal.<br>Sabe-se ainda que:
+      <ul>
+        <li>\(E(7,2,15)\) e \(G(6,10,13\))</li>  
+        <li> a reta \(EF\) é definida pela equação \((x,y,z)=(1,-2,19)+k(-3,-2,2), k \in \mathbb R\)</li>
+    </ul>
+    <p> <b> 1.1. </b> Qual das equações seguintes define uma reta perpendicular à reta \(E
+      F\) e que passa no ponto \(E\)?
+      <ul style="list-style-type:none;">
+        <li> <b> (A) </b> \((x,y,z)=(7,-3,3)+k(2,-3,0), k \in \mathbb R\)</li>  
+        <li> <b> (B) </b> \((x,y,z)=(7,2,15)+k(0,3,-3), k \in \mathbb R\)</li>
+          <li> <b> (C) </b> \((x,y,z)=(7,-10,3)+k(0,3,3), k \in \mathbb R\)</li>
+            <li> <b> (D) </b> \((x,y,z)=(7,2,15)+k(2,0,-3), k \in \mathbb R\)</li>
+    </ul> 
+    <p> <b> 2. </b> Numa escola frequentada por estudantes portugueses e estrangeiros, 60% dos alunos são raparigas e 15% são rapazes estrangeiros. <br> Escolheu-se, ao acaso, um aluno dessa escola e verificou-se que era um rapaz. <br> Qual é a probabilidade de ele ser português?
+      <ul style="list-style-type:none;">
+        <li> <b> (A) </b> 45% </li>  
+        <li> <b> (B) </b> 50% </li>
+          <li> <b> (C) </b> 57,5%</li>
+            <li> <b> (D) </b>62,5%</li>
+    </ul> 
+    <p> <b> 3. </b> Seja \(v_{n}\)
+uma progressão geométrica. <br> Sabe-se que \(v_{5}=4\) e que \(v_{8}=108\) <br> Qual é valor de \(v_{6}\)?  
+      <ul style="list-style-type:none;">
+        <li> <b> (A) </b> 12 </li>  
+        <li> <b> (B) </b> 24 </li>
+          <li> <b> (C) </b> 48 </li>
+            <li> <b> (D) </b> 60 </li>
+    </ul> 
+    <p> <b> 4. </b> Em \(\mathbb C\), o conjunto dos números complexos, considere \(z_{1}=2e^{i\frac{\pi}{4}}\) e \(z_{2}=2e^{i\frac{3\pi}{28}}\) <br> Seja \(w\) o número complexo tal que \(w=\cfrac{z_{1}}{z_{2}}\) <br> Sabe-se que, no plano complexo, o afixo do número complexo \(w\) é um dos vértices de um polígono regular com centro na origem do referencial e com outro vértice sobre o semieixo real positivo. <br> Qual é o número mínimo de vértices desse polígono?
+      <ul style="list-style-type:none;">
+        <li> <b> (A) </b> 7 </li>  
+        <li> <b> (B) </b> 14 </li>
+          <li> <b> (C) </b> 21 </li>
+            <li> <b> (D) </b> 28 </li>
+    </ul> 
+      <p> <b> 5. </b> Considere, num referencial o.n. \(Oxyz\), um trapézio \([PQRS]\), de bases \([PQ]\) e \([RS]\), em que o lado \([PS]\) é perpendicular às bases. <br> Tem-se \(P(1,-1,2),Q(-2,1,1)\) e \(R(-5,5,-3)\)
+  <p> <b> 5.1.</b>  Qual das condições seguintes define a superfície esférica de centro no ponto \(R\) e que passa no ponto \(Q\)?
+          <ul style="list-style-type:none;">
+        <li> <b> (A) </b> \((x-5)^2+(y+5)^2+(z-3)^2=59\) </li>  
+        <li> <b> (B) </b> \((x-5)^2+(y+5)^2+(z-3)^2=41\) </li>
+          <li> <b> (C) </b> \((x-5)^2+(y-5)^2+(z+3)^2=41\) </li>
+            <li> <b> (D) </b> \((x-5)^2+(y-5)^2+(z+3)^2=59\) </li>
+    </ul> 
+    <p> <b> 6.</b> Numa dada localidade, existe um clube onde se pratica badminton e ténis. 
+      <p> <b> 6.1.</b> Com doze raquetes distintas, sendo seis de badmínton e seis de ténis, formam-se, ao acaso, dois conjuntos de seis raquetes cada um. <br>Qual é o valor, arredondado às centésimas, da probabilidade de cada um dos dois conjuntos ficar
+com três raquetes de badmínton e três raquetes de ténis?
+        <ul style="list-style-type:none;">
+        <li> <b> (A) </b> 0,22 </li>  
+        <li> <b> (B) </b> 0,43 </li>
+          <li> <b> (C) </b> 0,50 </li>
+            <li> <b> (D) </b> 0,87 </li>
+    </ul> 
+  
+  <p> <b> 7.</b> Seja \(g\) uma função de domínio \(\mathbb R \setminus {2}\)<br> Sabe-se que: 
+    <ul style="list-style-type:circle;">
+        <li>  \(\lim\limits_{x \to 2^-} g(x)=1\) </li>  
+        <li>  \(\lim\limits_{x \to 2^+} g(x)=+\infty\) </li>
+        </ul>
+    <p> Seja \(v_{n}\) a sucessão de termo geral \(v_{n}=2-\cfrac{5}{n+3}\) <br> A que é igual \(\lim g(v_{n})\)?
+      <ul style="list-style-type:none;">
+        <li> <b> (A) </b> 0 </li>  
+        <li> <b> (B) </b> 1 </li>
+          <li> <b> (C) </b> 2 </li>
+            <li> <b> (D) </b> \(+\infty\) </li>
+    </ul> 
+      <p> <b> 8.</b> Em \(\mathbb C\), conjunto dos números complexos, considere \(z=2e^{i\frac{3\pi}{5}}\) <br> Seja \(w\) o número complexo tal que \(z \times w=i\) <br> Qual dos valores seguintes é um argumento do número complexo \(w\)?
+        <ul style="list-style-type:none;">
+        <li> <b> (A) </b> \(\frac{19\pi}{10}\) </li>  
+        <li> <b> (B) </b> \(\frac{2\pi}{5}\) </li>
+          <li> <b> (C) </b> \(\frac{-2\pi}{5}\) </li>
+            <li> <b> (D) </b> \(\frac{-19\pi}{10}\) </li>
+    </ul>
+   <p> <b> 9.</b>  Na Figura 1, está representada, num referencial o.n. \(Oxyz\), a pirâmide regular de base quadrada \([ABCD]\) e vértice \(E\) 
+     <br> Sabe-se que:
+     <ul style="list-style-type:circle;">
+        <li>  a base da pirâmide está contida no plano \(xOz\) </li>  
+        <li>  o vértice \(A\) pertence ao semieixo positivo \(Oz\) e o vértice \(B\) pertence ao semieixo negativo \(Ox\) </li>
+       <li>  o vértice \(E\) tem coordenadas (-2,6,2) </li>
+       <li>  o vetor \(\overrightarrow{BE} \) tem coordenadas (-1,6,2) </li>
+       <li>  o volume da pirâmide é 20 </li>
+        </ul>
+<p> <b> 9.1. </b> Seja \(\alpha\) o plano perpendicular à reta \(BE\) e que passa no ponto de coordenadas (1,0,1) <br> Qual das equações seguintes é uma equação do plano \(\alpha\)?
+  <ul style="list-style-type:none;">
+<div class="row">
+  <div class="column">
+        <li> <b> (A) </b> \(-x+6y+2z=0\) </li>  
+        <li> <b> (C) </b> \(x-6y-2z+1=0\) </li>
+</div>
+  <div class="column">
+    <li> <b> (B) </b> \(x+6y+2z-3=0\) </li>
+    <li> <b> (D) </b> \(2x-y+4z-5=0\) </li>
+  </div>
+    </ul>
+    <iframe scrolling="no" title="Figura1" src="https://www.geogebra.org/material/iframe/id/zvh6srxn/width/1357/height/746/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"           width="500px"
+          height="300px"
+          style="border:0px;"
+          allowfullscreen> </iframe>
+  <p> <b> 10. </b> Na Figura 2, está representado, a sombreado, num referencial o.n. \(xOy\), a região do plano cartesiano definida pela condição \(0\leq x \leq 10 \wedge 0 \leq y \leq 10 \) <br> 
+    Considere todos os pontos que pertencem a essa região e cujas coordenadas são números inteiros. <br> Escolhe-se, ao acaso, um desses pontos. <br> Qual é o valor, arredondado às milésimas, da probabilidade de esse ponto pertencer à reta de equação \(y=x+7\)? <br>
+<div class="row">
+  <div class="column">
+    <ul style="list-style-type:none;">
+        <li> <b> (A) </b> 0,025 </li>  
+        <li> <b> (C) </b> 0,041 </li>
+      </ul> 
+</div>
+  <div class="column">
+    <ul style="list-style-type:none;">
+    <li> <b> (B) </b> 0,033 </li>
+    <li> <b> (D) </b> 0,057 </li>
+      </ul> 
+  </div>   
+  <body>
+    <div
+      id="ggb-element"
+      style="resize:both"
+    ></div>                                     
+                            
+     <script src="GeoGebra-init.js"></script>
+    <script src="sketch.js"></script>
+  </body>
